@@ -15,12 +15,9 @@ function draw() {
   text('フレーム = ' + frameCount, 40, 80); // frameCount は毎フレームカウントアップされる p5.js の変数
 
   const FRAMES_PER_SECOND = 60;  // この課題では 1 秒間は 60 フレームと仮定する
-  sec = Math.floor(frameCount % FRAMES_PER_SECOND);
-  sec2 = Math.floor(sec / FRAMES_PER_SECOND);
-  // if (sec ==)
-  min = Math.floor();
-
-
+  sec = Math.floor(frameCount / FRAMES_PER_SECOND);
+  sec2 = sec % FRAMES_PER_SECOND;
+  min = Math.floor(sec / FRAMES_PER_SECOND);
 
   text('経過時間 = ' + min + '分' + sec2 + '秒', 40, 130);
 }
