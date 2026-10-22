@@ -15,19 +15,37 @@ function draw() {
 
   background(235, 245, 255);
 
-  if (keyIsDown(LEFT_ARROW)) {
-    playerX = playerX - MOVE_SPEED;
+  if (playerX > 0) {
+    if (keyIsDown(LEFT_ARROW)) {
+      playerX = playerX - MOVE_SPEED;
+    }
   }
-  if (keyIsDown(RIGHT_ARROW)) {
-    playerX = playerX + MOVE_SPEED;
+  if (playerX < 580) {
+    if (keyIsDown(RIGHT_ARROW)) {
+      playerX = playerX + MOVE_SPEED;
+    }
   }
+
 
   fill(70, 140, 230);
   rect(playerX, 350, PLAYER_SIZE, PLAYER_SIZE);
 
   fill(40, 40, 40);
+
+
+
   textSize(24);
   text('Ｘ座標 = ' + playerX, 40, 40);
-  text('左キー = ' + leftKeyText, 40, 80);
-  text('右キー = ' + rightKeyText, 40, 120);
+  if (playerX == 0) {
+    text('左キー = ' + 'それ以上左には行けません', 40, 80);
+  }
+  else {
+    text('左キー = ' + leftKeyText, 40, 80);
+  }
+  if (playerX == 580) {
+    text('右キー = ' + 'それ以上右には行けません', 40, 120);
+  }
+  else {
+    text('右キー = ' + rightKeyText, 40, 120);
+  }
 }
