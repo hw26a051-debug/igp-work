@@ -4,6 +4,13 @@ const ENEMY_SIZE = 100;
 const PLAYER_SIZE = 40;
 const HIT_DISTANCE = (ENEMY_SIZE + PLAYER_SIZE) / 2;  // 敵キャラの半径 + 自キャラの半径
 
+function getDistance(x1, y1, x2, y2) {
+  let distance = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+  return distance;
+}
+
+
+
 function setup() {
   createCanvas(640, 480);
 }
@@ -12,7 +19,7 @@ function draw() {
   background(235, 235, 200);
 
   // TODO: 自作関数 getDistance() を呼び出して敵とプレイヤーの距離を取得し、 distance に設定する
-  const distance = 999;
+  const distance = getDistance(ENEMY_X, ENEMY_Y, mouseX, mouseY);
 
   // 敵キャラの描画
   if (distance <= HIT_DISTANCE) { // 敵に当たった

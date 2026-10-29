@@ -2,6 +2,7 @@ let playerImage_stand;
 let playerImage_death;
 let enemyImage;
 
+
 // preload() は画像などを事前に読み込むための関数
 // 読み込みが完了してから setup() が実行される
 function preload() {
@@ -24,6 +25,8 @@ function draw() {
   const enemyY = mouseY;
 
   // TODO: 関数の使い方を処理やコメントから理解し、利用する
+  drawPlayer(300, 200, 'stand');
+  drawEnemy(enemyX, enemyY);
 }
 
 // プレイヤーの描画 (pose によって絵が変わる)
