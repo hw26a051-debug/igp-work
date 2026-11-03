@@ -25,7 +25,12 @@ function draw() {
   const enemyY = mouseY;
 
   // TODO: 関数の使い方を処理やコメントから理解し、利用する
-  drawPlayer(300, 200, 'stand');
+  if ((px < ex + ew) && (px + pw > ex) && (py < ey + eh) && (py + ph > ey)) {
+    drawPlayer(300, 200, 'death');
+  }
+  else {
+    drawPlayer(300, 200, 'stand');
+  }
   drawEnemy(enemyX, enemyY);
 }
 
