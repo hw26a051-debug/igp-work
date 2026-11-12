@@ -27,7 +27,6 @@ function setup() {
   }
 }
 
-// draw() は毎フレームの処理を行うための関数 (p5.js から自動的に呼び出される)
 // デフォルトでは 1 秒間に約 60 回実行される
 function draw() {
   background(30, 30, 30);
@@ -40,6 +39,7 @@ function draw() {
   drawResult();
 }
 
+
 // ターゲット 1 つの更新
 function updateTarget(target) {
   target.ageFrames++;
@@ -48,6 +48,7 @@ function updateTarget(target) {
   }
 
   if (target.ageFrames >= target.deathFrames) {
+    missCount++;
     resetTarget(target);
   }
 }
@@ -69,6 +70,11 @@ function resetTarget(target) {
 function mousePressed() {
   for (let i = 0; i < targets.length; i++) {
     // TODO (A): ターゲットとの当たり判定を行い、当たっている場合に必要な処理を書く
+    if (isHitTarget(targets[i])) {
+      successCount++;
+      resetTarget(targets[i]);
+      break;
+    }
   }
 }
 
