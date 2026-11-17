@@ -18,7 +18,8 @@ let player = {
 };
 
 // コイン情報
-let coins = [{}, {}];
+let coins = [{}, {}, {}, {}, {}];
+
 
 // preload() は画像などを事前に読み込むための関数 (p5.js から自動的に呼び出される)
 // 読み込みが完了してから setup() が実行される
@@ -48,6 +49,11 @@ function draw() {
   updatePlayer();
 
   for (let i = 0; i < coins.length; i++) {
+    if (isHitPlayer(coins[i])) {
+      gameScore++;
+      resetCoin(coins[i]);
+      break;
+    }
     updateCoin(coins[i]);
     drawCoin(coins[i]);
   }
@@ -59,9 +65,14 @@ function draw() {
 // プレイヤーの更新
 function updatePlayer() {
   if (keyIsDown(LEFT_ARROW)) {
+    player.flip = true;
+    player.x = player.x - player.speed;
   }
   if (keyIsDown(RIGHT_ARROW)) {
+    player.flip = false;
+    player.x = player.x + player.speed;
   }
+
 
   // 画面外への移動を制限 ("width" は p5.js の変数で画面横幅を表す)
   const playerWidth = 48; // 見た目のおおよその横幅
