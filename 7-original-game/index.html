@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ゲームのタイトル</title>
+
+  <!-- p5.js 本体と、効果音用の p5.sound を CDN から読み込む -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.13/lib/p5.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.13/lib/addons/p5.sound.js"></script>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #111111;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--
+    自分のファイルを増やしたら、ここに <script> を追加する。
+    config.js は他のファイルが使う定数を持つので最初に、
+    main.js は全体の流れを決めるので最後に読み込む。
+  -->
+  <script src="js/config.js"></script>
+  <script src="js/image.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/screens/title.js"></script>
+  <script src="js/screens/playing.js"></script>
+  <script src="js/screens/result.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
