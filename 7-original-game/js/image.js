@@ -21,4 +21,6 @@ function loadImages() {
   images.resultBg = loadImage('assets/images/result_bg.png');
   images.resultText = loadImage('assets/images/result_text.png');
   images.player = loadImage('assets/images/player.png');
+  images.crystal = loadImage('assets/images/kouseki_daiza1_blue.png')
+  images.rarecrystal = loadImage('assets/images/kouseki_daiza1_red.png')
 }
